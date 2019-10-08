@@ -19,6 +19,27 @@
                             <th>Action</th>
                           </tr>
                         </thead>
+                        <tbody>
+
+                          <?php
+                          $no = 1;
+                          foreach ($jabatan as $key => $value): ?>
+                            <tr>
+                              <td><?=$no ?></td>
+                              <td><?=$value['jabatan_nama']?></td>
+                              <td><?=$value['jabatan_basic']?></td>
+                              <td><?=$value['jabatan_uang_makan']?></td>
+                              <td><?=$value['jabatan_lembur']?></td>
+                              <td>
+                                <a href="<?php echo base_url('jabatan/edit'); ?>" class="btn btn-success">Edit</a>
+                                <a href="<?php echo base_url('jabatan/hapus'); ?>" class="btn btn-danger">Hapus</a>
+                              </td>
+                            </tr>
+                          <?php
+                          $no++;
+                          endforeach; ?>
+
+                        </tbody>
                       </table>
                     </div>
                   </div>
