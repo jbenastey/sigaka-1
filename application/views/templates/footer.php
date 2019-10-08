@@ -27,6 +27,9 @@
 <script src="<?php echo base_url()?>assets/js/scripts.js"></script>
 <!-- Custom JS File -->
 <script src="<?php echo base_url()?>assets/js/custom.js"></script>
+<script src="<?php echo base_url()?>assets/bundles/datatables/datatables.min.js"></script>
+<script src="<?php echo base_url()?>assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
+<script src="<?php echo base_url()?>assets/js/page/datatables.js"></script>
 </body>
 
 

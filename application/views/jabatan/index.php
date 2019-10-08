@@ -1,10 +1,10 @@
 <div class="col-12">
                 <div class="card">
                   <div class="card-header">
-                    <h4>Tabel Karyawan</h4>
+                    <h4>Tabel Jabatan</h4>
                   </div>
                   <div class="card-body">
-                    <a href="<?php echo base_url('karyawan/tambah')  ?>" class="btn btn-primary">Tambah</a><hr>
+                    <a href="<?php echo base_url('jabatan/tambah')  ?>" class="btn btn-primary">Tambah</a><hr>
                     <div class="table-responsive">
                       <table class="table table-striped" id="table-1">
                         <thead>
@@ -12,12 +12,10 @@
                             <th class="text-center">
                               No
                             </th>
-                            <th>NIK</th>
-                            <th>Nama Karyawan</th>
                             <th>Jabatan</th>
-                            <th>No rekening</th>
-                            <th>Tanggal Masuk</th>
-                            <th>Alamat</th>
+                            <th>Basic</th>
+                            <th>Uang Makan</th>
+                            <th>lembur</th>
                             <th>Action</th>
                           </tr>
                         </thead>
