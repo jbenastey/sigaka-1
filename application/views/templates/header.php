@@ -16,6 +16,9 @@
 	<!-- Custom style CSS -->
 	<link rel="stylesheet" href="<?php echo base_url()?>assets/css/custom.css">
 	<link rel='shortcut icon' type='image/x-icon' href='<?php echo base_url()?>assets/img/favicon.ico' />
+
+  <link rel="stylesheet" href="<?php echo base_url()?>assets/bundles/datatables/datatables.min.css">
+  <link rel="stylesheet" href="<?php echo base_url()?>assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
 </head>
 
 <body>
@@ -30,7 +33,7 @@
 									collapse-btn"> <i data-feather="align-justify"></i></a></li>
 						<li><a href="#" class="nav-link nav-link-lg fullscreen-btn">
 								<i data-feather="maximize"></i>
-							</a></li>						
+							</a></li>
 					</ul>
 				</div>
 				<ul class="navbar-nav navbar-right">
@@ -79,8 +82,8 @@
 						<li class="dropdown"><a href="#" class="nav-link has-dropdown"><i
 									data-feather="briefcase"></i><span>Data Master</span></a>
 							<ul class="dropdown-menu">
-								<li><a class="nav-link" href="widget-chart.html">Data Karyawan</a></li>
-								<li><a class="nav-link" href="widget-data.html">Data Jabatan</a></li>
+								<li><a class="nav-link" href="<?php echo base_url('karyawan'); ?>">Data Karyawan</a></li>
+								<li><a class="nav-link" href="<?php echo base_url('jabatan'); ?>">Data Jabatan</a></li>
 							</ul>
 						</li>
 						<li class="dropdown"><a href="#" class="nav-link has-dropdown"><i

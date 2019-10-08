@@ -51,6 +51,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'welcome';
 $route['login'] = 'AuthController/login';
+$route['karyawan'] = 'KaryawanController/index';
+$route['karyawan/tambah'] = 'KaryawanController/tambah';
+$route['jabatan'] = 'JabatanController/index';
+$route['jabatan/tambah'] = 'JabatanController/tambah';
 $route['logout'] = 'AuthController/logout';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
