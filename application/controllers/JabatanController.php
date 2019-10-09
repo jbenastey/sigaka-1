@@ -9,16 +9,27 @@
     function __construct()
     {
       parent::__construct();
-      $this->load->database();
+      $this->load->model('JabatanModel');
     }
     function index()
     {
+      $data['jabatan'] = $this->JabatanModel->tampildata();
       $this->load->view('templates/header');
-      $this->load->view('jabatan/index');
+      $this->load->view('jabatan/index',$data);
       $this->load->view('templates/footer');
     }
     function tambah()
     {
+      if (isset($_POST['simpan'])) {
+        $data = array(
+          'jabatan_nama'=>$this->input->post('namajabatan'),
+          'jabatan_basic'=>$this->input->post('basic'),
+          'jabatan_uang_makan'=>$this->input->post('uangmakan'),
+          'jabatan_lembur'=>$this->input->post('lembur')
+        );
+        $data = $this->JabatanModel->simpan($data);
+        redirect('jabatan');
+      }
       $this->load->view('templates/header');
       $this->load->view('jabatan/tambah');
       $this->load->view('templates/footer');
