@@ -34,6 +34,30 @@
       $this->load->view('jabatan/tambah');
       $this->load->view('templates/footer');
     }
+    function edit()
+    {
+      $id = $this->uri->segment(3);
+      if (isset($_POST['submit'])) {
+        $nama = $this->input->post('namajabatan');
+        $basic = $this->input->post('basic');
+        $uangmakan = $this->input->post('uangmakan');
+        $lembur = $this->input->post('lembur');
+
+        $data = array(          
+          'jabatan_nama'=>$nama,
+          'jabatan_basic'=>$basic,
+          'jabatan_uang_makan'=>$uangmakan,
+          'jabatan_lembur'=>$lembur
+        );
+        $this->JabatanModel->editjabatan($id,$data);
+        redirect('jabatan');
+      }else {
+        $data['row'] = $this->JabatanModel->get_id($id)->row_array();
+        $this->load->view('templates/header');
+        $this->load->view('jabatan/edit',$data);
+        $this->load->view('templates/footer');
+      }
+    }
   }
 
  ?>

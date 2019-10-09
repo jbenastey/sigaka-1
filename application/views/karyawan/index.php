@@ -34,8 +34,8 @@
                               <td><?=$value['karyawan_tanggal_masuk']?></td>
                               <td><?=$value['karyawan_alamat']?></td>
                               <td>
-                                <a href="<?php echo base_url('jabatan/edit'); ?>" class="btn btn-success">Edit</a>
-                                <a href="<?php echo base_url('jabatan/hapus'); ?>" class="btn btn-danger">Hapus</a>
+                                <a href="<?php echo base_url('karyawan/edit/'.$value['karyawan_nik']); ?>" class="btn btn-success">Edit</a>
+                                <a href="<?php echo base_url('karyawan/hapus'); ?>" class="btn btn-danger">Hapus</a>
                               </td>
                             </tr>
                           <?php

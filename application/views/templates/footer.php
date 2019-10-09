@@ -30,6 +30,10 @@
 <script src="<?php echo base_url()?>assets/bundles/datatables/datatables.min.js"></script>
 <script src="<?php echo base_url()?>assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
 <script src="<?php echo base_url()?>assets/js/page/datatables.js"></script>
+
+<script src="<?php echo base_url() ?>assets/bundles/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="<?php echo base_url() ?>assets/bundles/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+<script src="<?php echo base_url() ?>assets/bundles/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
 </body>
 
 

@@ -21,6 +21,17 @@
     {
       $this->db->insert('sigaka_karyawan', $data);
     }
+    function edit($id,$data)
+    {
+      $this->db->where('karyawan_nik',$id);
+      $this->db->update('sigaka_karyawan',$data);
+    }
+    function get_id($id)
+    {
+      $this->db->join('sigaka_jabatan','sigaka_jabatan.jabatan_id = sigaka_karyawan.karyawan_jabatan');
+      $dapat = array('karyawan_nik'=>$id);
+      return $this->db->get_where('sigaka_karyawan',$dapat);
+    }
   }
 
 

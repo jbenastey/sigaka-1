@@ -31,7 +31,7 @@
                               <td><?=$value['jabatan_uang_makan']?></td>
                               <td><?=$value['jabatan_lembur']?></td>
                               <td>
-                                <a href="<?php echo base_url('jabatan/edit'); ?>" class="btn btn-success">Edit</a>
+                                <a href="<?php echo base_url("jabatan/edit/".$value['jabatan_id']); ?>" class="btn btn-success">Edit</a>
                                 <a href="<?php echo base_url('jabatan/hapus'); ?>" class="btn btn-danger">Hapus</a>
                               </td>
                             </tr>
