@@ -28,6 +28,7 @@
           'jabatan_lembur'=>$this->input->post('lembur')
         );
         $data = $this->JabatanModel->simpan($data);
+        $this->session->set_flashdata('alert', 'berhasil_tambah');
         redirect('jabatan');
       }
       $this->load->view('templates/header');
@@ -43,13 +44,14 @@
         $uangmakan = $this->input->post('uangmakan');
         $lembur = $this->input->post('lembur');
 
-        $data = array(          
+        $data = array(
           'jabatan_nama'=>$nama,
           'jabatan_basic'=>$basic,
           'jabatan_uang_makan'=>$uangmakan,
           'jabatan_lembur'=>$lembur
         );
         $this->JabatanModel->editjabatan($id,$data);
+        $this->session->set_flashdata('alert', 'berhasil_edit');
         redirect('jabatan');
       }else {
         $data['row'] = $this->JabatanModel->get_id($id)->row_array();
@@ -57,6 +59,14 @@
         $this->load->view('jabatan/edit',$data);
         $this->load->view('templates/footer');
       }
+    }
+    function delete()
+    {
+      $id = $this->uri->segment(3);
+      $data = array("jabatan_id"=>$id);
+      $this->JabatanModel->deletejabatan($data);
+      $this->session->set_flashdata('alert', 'berhasil_hapus');
+      redirect('jabatan');
     }
   }
 

@@ -1,10 +1,38 @@
-<div class="col-12">
+            <div class="col-12">
+                <?php if ($this->session->flashdata('alert') == 'berhasil_tambah') { ?>
+                  <div class="alert alert-primary alert-dismissible show fade">
+                    <div class="alert-body">
+                      <button class="close" data-dismiss="alert">
+                      <span>&times;</span>
+                      </button>
+                      Berhasil Menambah Data
+                    </div>
+                  </div>
+                <?php }elseif ($this->session->flashdata('alert') == 'berhasil_edit') { ?>
+                  <div class="alert alert-success alert-dismissible show fade">
+                    <div class="alert-body">
+                      <button class="close" data-dismiss="alert">
+                      <span>&times;</span>
+                      </button>
+                      Berhasil Mengubah Data
+                    </div>
+                  </div>
+                <?php }elseif ($this->session->flashdata('alert') == 'berhasil_hapus') {?>
+                  <div class="alert alert-danger alert-dismissible show fade">
+                    <div class="alert-body">
+                      <button class="close" data-dismiss="alert">
+                      <span>&times;</span>
+                      </button>
+                      Berhasil Menghapus Data
+                    </div>
+                  </div>
+                <?php } ?>
                 <div class="card">
                   <div class="card-header">
                     <h4>Tabel Karyawan</h4>
                   </div>
                   <div class="card-body">
-                    <a href="<?php echo base_url('karyawan/tambah')  ?>" class="btn btn-primary">Tambah</a><hr>
+                    <a href="<?php echo base_url('karyawan/tambah') ?>" class="btn btn-primary">Tambah</a><hr>
                     <div class="table-responsive">
                       <table class="table table-striped" id="table-1">
                         <thead>
@@ -35,7 +63,7 @@
                               <td><?=$value['karyawan_alamat']?></td>
                               <td>
                                 <a href="<?php echo base_url('karyawan/edit/'.$value['karyawan_nik']); ?>" class="btn btn-success">Edit</a>
-                                <a href="<?php echo base_url('karyawan/hapus'); ?>" class="btn btn-danger">Hapus</a>
+                                <a href="<?php echo base_url('karyawan/delete/'.$value['karyawan_nik']); ?>" class="btn btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">Hapus</a>
                               </td>
                             </tr>
                           <?php

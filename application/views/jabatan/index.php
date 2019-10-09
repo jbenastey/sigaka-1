@@ -1,4 +1,32 @@
-<div class="col-12">
+      <div class="col-12">
+            <?php if ($this->session->flashdata('alert') == 'berhasil_tambah') { ?>
+              <div class="alert alert-primary alert-dismissible show fade">
+                <div class="alert-body">
+                  <button class="close" data-dismiss="alert">
+                  <span>&times;</span>
+                  </button>
+                  Berhasil Menambah Data
+                </div>
+              </div>
+            <?php }elseif ($this->session->flashdata('alert') == 'berhasil_edit') { ?>
+              <div class="alert alert-success alert-dismissible show fade">
+                <div class="alert-body">
+                  <button class="close" data-dismiss="alert">
+                  <span>&times;</span>
+                  </button>
+                  Berhasil Mengubah Data
+                </div>
+              </div>
+            <?php }elseif ($this->session->flashdata('alert') == 'berhasil_hapus') {?>
+              <div class="alert alert-danger alert-dismissible show fade">
+                <div class="alert-body">
+                  <button class="close" data-dismiss="alert">
+                  <span>&times;</span>
+                  </button>
+                  Berhasil Menghapus Data
+                </div>
+              </div>
+            <?php } ?>
                 <div class="card">
                   <div class="card-header">
                     <h4>Tabel Jabatan</h4>
@@ -32,7 +60,7 @@
                               <td><?=$value['jabatan_lembur']?></td>
                               <td>
                                 <a href="<?php echo base_url("jabatan/edit/".$value['jabatan_id']); ?>" class="btn btn-success">Edit</a>
-                                <a href="<?php echo base_url('jabatan/hapus'); ?>" class="btn btn-danger">Hapus</a>
+                                <a href="<?php echo base_url('jabatan/delete/'.$value['jabatan_id']); ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" class="btn btn-danger">Hapus</a>
                               </td>
                             </tr>
                           <?php

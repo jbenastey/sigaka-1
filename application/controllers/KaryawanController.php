@@ -31,6 +31,7 @@
           'karyawan_alamat'=>$this->input->post('alamat')
         );
         $data = $this->KaryawanModel->simpan($data);
+        $this->session->set_flashdata('alert', 'berhasil_tambah');
         redirect('karyawan');
       }
       $data['jabatan'] = $this->JabatanModel->tampildata();
@@ -58,6 +59,7 @@
           'karyawan_alamat'=>$alamat
         );
         $this->KaryawanModel->edit($id,$data);
+        $this->session->set_flashdata('alert', 'berhasil_edit');
         redirect('karyawan');
       }else {
         // $data['jabatan'] = $this->JabatanModel->tampildata();
@@ -66,6 +68,14 @@
         $this->load->view('karyawan/edit',$data);
         $this->load->view('templates/footer');
       }
+    }
+    function delete()
+    {
+      $id = $this->uri->segment(3);
+      $data = array("karyawan_nik"=>$id);
+      $this->KaryawanModel->deletekaryawan($data);
+      $this->session->set_flashdata('alert', 'berhasil_hapus');
+      redirect('karyawan');
     }
   }
 

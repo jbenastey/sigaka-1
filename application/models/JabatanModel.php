@@ -31,6 +31,10 @@
       $param = array('jabatan_id'=>$id);
       return $this->db->get_where('sigaka_jabatan',$param);
     }
+    function deletejabatan($id)
+    {
+      $this->db->delete('sigaka_jabatan',$id);
+    }
   }
 
 

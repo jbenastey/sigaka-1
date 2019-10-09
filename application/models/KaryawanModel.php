@@ -32,6 +32,10 @@
       $dapat = array('karyawan_nik'=>$id);
       return $this->db->get_where('sigaka_karyawan',$dapat);
     }
+    function deletekaryawan($id)
+    {
+      $this->db->delete('sigaka_karyawan',$id);
+    }
   }
 
 

@@ -34,6 +34,9 @@
 <script src="<?php echo base_url() ?>assets/bundles/bootstrap-daterangepicker/daterangepicker.js"></script>
 <script src="<?php echo base_url() ?>assets/bundles/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
 <script src="<?php echo base_url() ?>assets/bundles/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+
+<script src="<?php echo base_url() ?>assets/bundles/sweetalert/sweetalert.min.js"></script>
+<script src="<?php echo base_url() ?>assets/js/page/sweetalert.js"></script>
 </body>
 
 
