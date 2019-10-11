@@ -22,7 +22,7 @@
                     <div class="form-group">
                       <label>Jabatan</label>
                       <select class="form-control" name="jabatan" tabindex="3">
-                        <option value=""></option>
+                        <option selected disabled>pilih jabatan</option>
                         <?php foreach ($jabatan as $key => $value): ?>
                           <option value="<?php echo $value['jabatan_id']; ?>"><?php echo $value['jabatan_nama']; ?></option>
                         <?php endforeach; ?>

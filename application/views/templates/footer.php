@@ -1,5 +1,5 @@
-</div>
-</section>
+
+
 </div>
 <footer class="main-footer">
       <div class="footer-left">
@@ -12,6 +12,29 @@
   </div>
 </div>
 <!-- General JS Scripts -->
+<script type="text/javascript">
+
+  // function ambilid(){
+  //   var id = $(this).data('idlembur');
+  //   urlview = '<?php echo site_url("AbsenController/semua/");?>'+id;
+  //   var dataid = {'absen_id':id};console.log(urlview);
+  //   $.ajax({
+  //     url : urlview,
+  //     data : dataid,
+  //     dataType : 'json',
+  //     type : 'POST',
+  //     async : false,
+  //     success : function(data){
+  //
+  //       $('#absen_hari').val('absen_hari');
+  //     }
+  //   })
+  // }
+
+
+
+
+</script>
 <script src="<?php echo base_url()?>assets/js/app.min.js"></script>
 <!-- JS Libraies -->
 <script src="<?php echo base_url()?>assets/bundles/chartjs/chart.min.js"></script>

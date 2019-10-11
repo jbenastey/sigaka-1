@@ -77,12 +77,7 @@
 					</div>
 					<ul class="sidebar-menu">
 						<li class="menu-header">Menu</li>
-						<li class="dropdown active"><a href="#" class="nav-link has-dropdown"><i
-									data-feather="monitor"></i><span>Dashboard</span>
-							</a>
-							<ul class="dropdown-menu">
-								<li class="active"><a class="nav-link" href="index2.html">Dashboard V2</a></li>
-							</ul>
+						<li class="dropdown active"><a href="#"><i data-feather="monitor"></i><span>Dashboard</span></a>
 						</li>
 						<li class="dropdown"><a href="#" class="nav-link has-dropdown"><i
 									data-feather="briefcase"></i><span>Data Master</span></a>
@@ -91,13 +86,12 @@
 								<li><a class="nav-link" href="<?php echo base_url('jabatan'); ?>">Data Jabatan</a></li>
 							</ul>
 						</li>
+						<li class="dropdown active"><a href="<?php echo base_url('absen') ?>"><i data-feather="monitor"></i><span>Absen</span></a>
 						<li class="dropdown"><a href="#" class="nav-link has-dropdown"><i
 									data-feather="command"></i><span>Gaji</span></a>
 							<ul class="dropdown-menu">
 								<li><a class="nav-link" href="chat.html">Chat</a></li>
 								<li><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-								<li><a class="nav-link" href="blog.html">Blog</a></li>
-								<li><a class="nav-link" href="calendar.html">Calendar</a></li>
 							</ul>
 						</li>
             <li class="dropdown"><a href="#" class="nav-link has-dropdown"><i
@@ -114,3 +108,38 @@
       <div class="main-content">
 				<section class="section">
 					<div class="row">
+						<div class="card-body">
+							<?php if ($this->session->flashdata('alert') == 'success_login') { ?>
+	              <div class="alert alert-primary alert-dismissible show fade">
+	                <div class="alert-body">
+	                  <button class="close" data-dismiss="alert">
+	                  <span>&times;</span>
+	                  </button>
+	                  Selamat datang
+	                </div>
+	              </div>
+							<?php } ?>
+						</div>
+
+					</div>
+
+					<?php if ($this->session->flashdata('alert') == 'berhasil_tambah') { ?>
+				    <div class="alert alert-primary alert-dismissible show fade">
+				      <div class="alert-body">
+				        <button class="close" data-dismiss="alert">
+				        <span>&times;</span>
+				        </button>
+				        Berhasil Mengisi Absen
+				      </div>
+				    </div>
+				  <?php }elseif ($this->session->flashdata('alert') == 'berhasil_edit') { ?>
+				    <div class="alert alert-success alert-dismissible show fade">
+				      <div class="alert-body">
+				        <button class="close" data-dismiss="alert">
+				        <span>&times;</span>
+				        </button>
+				        Berhasil Menambah Jam Lembur
+				      </div>
+				    </div>
+				  <?php } ?>
+					</section>
