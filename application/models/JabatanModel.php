@@ -21,6 +21,20 @@
     {
       $this->db->insert('sigaka_jabatan', $data);
     }
+    function editjabatan($id,$data)
+    {
+      $this->db->where('jabatan_id',$id);
+      $this->db->update('sigaka_jabatan',$data);
+    }
+    function get_id($id)
+    {
+      $param = array('jabatan_id'=>$id);
+      return $this->db->get_where('sigaka_jabatan',$param);
+    }
+    function deletejabatan($id)
+    {
+      $this->db->delete('sigaka_jabatan',$id);
+    }
   }
 
 
